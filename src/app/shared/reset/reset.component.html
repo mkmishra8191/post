@@ -1,0 +1,15 @@
+<br />
+
+<form [formGroup]="registerForm">
+    <div class="form-group">
+      
+      <input type="email" formControlName="email" class="form-control" placeholder="Enter your email address" autofocus required>
+
+    </div>
+    <label class="error">{{errorMessage}}</label>
+     <label class="success">{{successMessage}}</label>
+    <span class="button">
+      
+        <button type="submit" (click)="reset(registerForm.value)" class="btn btn-default">Submit</button>
+    </span>
+ </form>

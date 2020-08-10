@@ -1,0 +1,20 @@
+<br />
+<br />
+
+<form >
+    
+     
+    <div class="input-group">
+      
+    <input  type="text" class="form-control" name="item.title" placeholder="title"  [(ngModel)]="item.title" autofocus  >
+    
+      
+    </div>
+    <div class="form-group-lg">
+    <textarea  id="textarea" class="form-control" rows="4" name="item.content" placeholder="content"  [(ngModel)]="item.content">
+    </textarea>
+    </div>
+    <div class="center">
+    <button type="submit" class="btn"  (click)="onSubmit()" routerLink="/blog" >Submit</button>
+  </div>
+  </form>

@@ -1,0 +1,41 @@
+<br />
+<br />
+<ng-template #showRegisternPage>
+<ng-template #showLoginPage>
+<div style="margin:0px 0px">
+  <ul class="list-group"  *ngFor="let item of items">
+    <li  class="list-group-item" (click)="onClick($event,item)" >
+     
+      
+       <span class="center" > {{item.title}}</span> {{item.content}}
+      
+
+
+       <spam  class="button"  *ngIf="editState && itemToEdit.id==item.id && auth.afAuth.authState | async as user;" >
+        <spam class="pencil">
+        <i class="fa fa-pencil fa-lg" routerLink="{{item.id}}"></i>
+      </spam>
+      <spam class="box">
+        <i class="fa fa-trash-o fa-lg" (click)="deleteItem(item)"></i>
+      </spam>
+        </spam>
+       
+
+      </li>
+    </ul>
+  </div>
+   <div  class="center"  *ngIf="auth.afAuth.authState | async as user;" >
+  <i class="fa fa-plus-circle fa-2x" routerLink="/dashboard" ></i>
+  
+    
+  </div>
+</ng-template>
+  <div *ngIf="auth.showLoginPage ; else showLoginPage">
+    <app-login></app-login>
+   </div>
+  </ng-template>
+  <div *ngIf="auth.showRegisterinPage ; else showRegisternPage">
+    <app-register></app-register>
+   </div>
+
+  

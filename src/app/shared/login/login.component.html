@@ -1,0 +1,21 @@
+
+<form [formGroup]="registerForm">
+    <div class="form-group">
+      
+      <input type="email"  placeholder="Email address"   formControlName="email" class="form-control" autofocus required>
+    </div>
+    <div class="form-group">
+      
+      <input type="password" placeholder="Password" class="form-control" formControlName="password" required>
+      <label class="error">{{errorMessage}}</label>
+      <label class="success">{{successMessage}}</label>
+    </div>
+    <span class="csr">
+   <button type="submit" (click)="login(registerForm.value)" class="btn btn-default">Login</button>
+  </span>
+   <span class="rst">
+   <button type="submit" routerLink="/reset" class="btn btn-default" (click)="showNav()">Reset Password</button>
+  </span>
+ </form>
+
+ 

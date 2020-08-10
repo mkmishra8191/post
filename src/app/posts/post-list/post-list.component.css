@@ -1,0 +1,26 @@
+.center{
+    display: flex;
+    justify-content: center;
+
+}
+.button{
+    float: right;
+    
+    
+}
+.pencil{
+    
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.box{
+    outline:0;
+    border: none;
+    cursor: pointer; 
+}
+
+.pencil :focus{
+    outline:0;
+    border: none;
+}

@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+<mat-toolbar-row>
+<span class= "navv" routerLink="/blog" (click)="showNav()">Post</span>
+<span class="spacer"></span>
+<div *ngIf="auth.afAuth.authState | async as user; else showLogn">
+<span class="hello">{{user.displayName}}</span> 
+<span class= "navv" (click)="auth.logout()" routerLink="/blog"> Logout</span>
+</div>
+<ng-template #showLogn>
+  
+<nav style="margin-top: 20px;">
+    <ul>
+  
+  <li *ngIf="auth.navFlag"> 
+  <span class="xyz"  (click)="showLogin()">Login</span>
+  
+  <span class="xy" (click)="showRegister()">Register</span></li>
+
+  <li> <span class="x" routerLink="/blog" (click)="auth.loginGoogle()">Login with Google</span></li> 
+  
+</ul>
+</nav>
+
+</ng-template>
+</mat-toolbar-row>
+</mat-toolbar>
